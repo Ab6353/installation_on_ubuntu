@@ -10,7 +10,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF158
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 
 #adding the Pritunl Repository 
-echo "deb http://repo.pritunl.com/stable/apt focal main" | tee /etc/apt/sources.list.d/pritunl.list
+echo "deb http://repo.pritunl.com/stable/apt focal main" | sudo tee /etc/apt/sources.list.d/pritunl.list
 
 sudo apt-get update -y
 sudo apt-get install pritunl -y
