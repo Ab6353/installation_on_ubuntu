@@ -8,9 +8,10 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 # Alternative import from download if keyserver offline
 curl https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc | sudo apt-key add -
 
-echo "deb http://security.ubuntu.com/ubuntu impish-security main" | sudo tee /etc/apt/sources.list.d/impish-security.list
-sudo apt-get update
-sudo apt-get install libssl1.1
+#for ubuntu > 20.04
+#echo "deb http://security.ubuntu.com/ubuntu impish-security main" | sudo tee /etc/apt/sources.list.d/impish-security.list
+#sudo apt-get update
+#sudo apt-get install libssl1.1
 
 
 sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list << EOF
