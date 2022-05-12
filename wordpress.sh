@@ -2,7 +2,7 @@ sudo apt update
 sudo apt install nginx
 sudo systemctl status nginx.service
 sudo systemctl enable  nginx.service
-sudo apt install php7.4 php7.4-gd php7.4-mysql php7.4-zip php7.4-fpm
+sudo apt -y install php7.4 php7.4-gd php7.4-mysql php7.4-zip php7.4-fpm
 wget https://wordpress.org/latest.tar.gz
 tar -zxvf latest.tar.gz
 sudo cp -r wordpress/* /var/www/html
