@@ -7,7 +7,7 @@ wget https://wordpress.org/latest.tar.gz
 tar -zxvf latest.tar.gz
 sudo cp -r wordpress/* /var/www/html
 sudo chown -R www-data:www-data /var/www/html
-cat >/etc/nginx/sites-available/wordpress.conf <<'EOL'
+sudo tee -a /etc/nginx/sites-available/wordpress.conf > /dev/null <<'EOT'
 server {
         listen 80;
         root /var/www/html;
@@ -35,7 +35,8 @@ server {
          #       deny all;
         #}
 }
-EOL
+
+EOT
 #sudo cp -r wordpress.conf /etc/nginx/sites-available/wordpress.conf
 
 sudo ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
