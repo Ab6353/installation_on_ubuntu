@@ -1,13 +1,13 @@
+#!bin/bash
 sudo apt update
-sudo apt install nginx
+sudo apt -y install nginx
 sudo systemctl enable  nginx.service
 sudo apt -y install php7.4 php7.4-gd php7.4-mysql php7.4-zip php7.4-fpm
 wget https://wordpress.org/latest.tar.gz
 tar -zxvf latest.tar.gz
 sudo cp -r wordpress/* /var/www/html
 sudo chown -R www-data:www-data /var/www/html
-
-sudo tee -a /etc/nginx/sites-available/wordpress.conf > /dev/null <<EOT
+cat >/etc/nginx/sites-available/wordpress.conf <<'EOL'
 server {
         listen 80;
         root /var/www/html;
@@ -35,8 +35,9 @@ server {
          #       deny all;
         #}
 }
+EOL
+#sudo cp -r wordpress.conf /etc/nginx/sites-available/wordpress.conf
 
-EOT
 sudo ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
 sudo unlink /etc/nginx/sites-enabled/default
 sudo apt update
