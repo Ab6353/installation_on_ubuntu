@@ -19,3 +19,4 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 sudo dpkg -i minikube_latest_amd64.deb
+sudo chmod 777 /var/run/docker.sock
